@@ -4,11 +4,11 @@
         {
             "entity": {
                 "type": "Project",
-                "fullProjectTag": "5e68b501-cec4-481a-8c90-0814ede05f29",
-                "id": "2c04796c-b9b7-4dd1-84a0-d2ea67394e2b",
-                "lastModified": "2018-10-17T11:02:35.000+02:00",
+                "fullProjectTag": "a6e9bb99-f91d-40f2-9516-4f4a94149dbe",
+                "id": "535d8075-9a1e-4f36-b605-44c0650a34ce",
+                "lastModified": "2018-10-17T11:12:52.000+02:00",
                 "name": "Expressions test cases",
-                "tag": "5e68b501-cec4-481a-8c90-0814ede05f29"
+                "tag": "a6e9bb99-f91d-40f2-9516-4f4a94149dbe"
             },
             "children": [
                 {
@@ -56,9 +56,9 @@
                             "path": ""
                         },
                         "description": "Will pass after release",
-                        "id": "21a732e1-7068-4922-a306-010f1d8cb5ed",
+                        "id": "94334a42-3f8e-4de6-9717-ad90ff87c508",
                         "name": "Legacy expressions with dollar signs",
-                        "tag": "2e6ba4ff-e482-413b-9b23-657477a6f7c6",
+                        "tag": "a1a930bd-4dad-45ab-b6f7-97478fb1ae07",
                         "headers": [
                             {
                                 "enabled": true,
@@ -90,7 +90,7 @@
                                 "value": "${\"keepAliveTime\"},${\"Language\"}"
                             }
                         ],
-                        "parentId": "2c04796c-b9b7-4dd1-84a0-d2ea67394e2b"
+                        "parentId": "535d8075-9a1e-4f36-b605-44c0650a34ce"
                     }
                 },
                 {
@@ -138,9 +138,9 @@
                             "path": ""
                         },
                         "description": "Will fail after release",
-                        "id": "0ddabb98-389d-42be-a989-4113185acced",
+                        "id": "eff8ad40-5ab3-4d00-a4b5-8b338e0370d0",
                         "name": "Legacy expressions without dollar signs",
-                        "tag": "0587fae7-a3b3-4754-9fd3-09a446dc6d74",
+                        "tag": "217f50d1-1801-47e0-9d89-14e135e6764f",
                         "headers": [
                             {
                                 "enabled": true,
@@ -172,7 +172,7 @@
                                 "value": "{\"keepAliveTime\"},{\"Language\"}"
                             }
                         ],
-                        "parentId": "2c04796c-b9b7-4dd1-84a0-d2ea67394e2b"
+                        "parentId": "535d8075-9a1e-4f36-b605-44c0650a34ce"
                     }
                 },
                 {
@@ -206,11 +206,11 @@
                             "path": "/api/echo"
                         },
                         "description": "",
-                        "id": "01548304-d866-494b-9669-118f14c445df",
+                        "id": "86239693-cd5e-459d-80d2-172237a5544e",
                         "name": "URI",
-                        "tag": "a8f6c181-f670-49e1-a553-edbf28bf8130",
+                        "tag": "3ef22f37-6698-4a90-af97-c889281656b7",
                         "headers": [],
-                        "parentId": "2c04796c-b9b7-4dd1-84a0-d2ea67394e2b"
+                        "parentId": "535d8075-9a1e-4f36-b605-44c0650a34ce"
                     }
                 },
                 {
@@ -240,13 +240,13 @@
                                 "name": "https",
                                 "version": "V11"
                             },
-                            "host": "${getEntityById(\"01548304-d866-494b-9669-118f14c445df\").\"request\".\"BROKEN_uri\"}",
+                            "host": "${getEntityById(\"86239693-cd5e-459d-80d2-172237a5544e\").\"request\".\"BROKEN_uri\"}",
                             "path": ""
                         },
                         "description": "Ensure that an expression referencing to a non-existing entity is displayed as Broken reference in the UI",
-                        "id": "6b115aac-06a0-4516-aa3b-245f4c41e5e4",
+                        "id": "c7f36bbb-a8f5-4917-a637-c317dd487743",
                         "name": "URI ref. is broken",
-                        "tag": "ae15df8e-0f47-4e66-98a3-a92dd4eaf341",
+                        "tag": "006ef4a0-f9a4-4663-b8fc-17d0d87e4e3b",
                         "headers": [
                             {
                                 "enabled": true,
@@ -254,7 +254,7 @@
                                 "value": ""
                             }
                         ],
-                        "parentId": "2c04796c-b9b7-4dd1-84a0-d2ea67394e2b"
+                        "parentId": "535d8075-9a1e-4f36-b605-44c0650a34ce"
                     }
                 }
             ]
