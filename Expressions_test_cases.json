@@ -1,0 +1,323 @@
+{
+    "version": 4,
+    "entities": [
+        {
+            "entity": {
+                "type": "Project",
+                "fullProjectTag": "5e68b501-cec4-481a-8c90-0814ede05f29",
+                "id": "2c04796c-b9b7-4dd1-84a0-d2ea67394e2b",
+                "lastModified": "2018-10-17T11:02:35.000+02:00",
+                "name": "Expressions test cases",
+                "tag": "5e68b501-cec4-481a-8c90-0814ede05f29"
+            },
+            "children": [
+                {
+                    "entity": {
+                        "uriEditor": true,
+                        "type": "Request",
+                        "method": {
+                            "requestBody": true,
+                            "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                            "name": "POST"
+                        },
+                        "body": {
+                            "formBody": {
+                                "overrideContentType": true,
+                                "encoding": "application/x-www-form-urlencoded",
+                                "items": []
+                            },
+                            "bodyType": "Text",
+                            "autoSetLength": true,
+                            "textBody": "{\"environment expressions\": \n${\"keepAliveTime\"},${\"Language\"}}"
+                        },
+                        "headersType": "Form",
+                        "uri": {
+                            "query": {
+                                "delimiter": "&",
+                                "items": [
+                                    {
+                                        "enabled": true,
+                                        "name": "${item1}",
+                                        "value": "${item1}"
+                                    },
+                                    {
+                                        "enabled": true,
+                                        "name": "${item2}",
+                                        "value": "${item2}"
+                                    }
+                                ]
+                            },
+                            "scheme": {
+                                "secure": true,
+                                "name": "https",
+                                "version": "V11"
+                            },
+                            "host": "${host}${path}",
+                            "path": ""
+                        },
+                        "description": "Will pass after release",
+                        "id": "21a732e1-7068-4922-a306-010f1d8cb5ed",
+                        "name": "Legacy expressions with dollar signs",
+                        "tag": "2e6ba4ff-e482-413b-9b23-657477a6f7c6",
+                        "headers": [
+                            {
+                                "enabled": true,
+                                "name": "User-Agent",
+                                "value": "${\"UA\"}"
+                            },
+                            {
+                                "enabled": true,
+                                "name": "Keep-Alive",
+                                "value": "${\"keepAliveTime\"}"
+                            },
+                            {
+                                "enabled": true,
+                                "name": "Accept-Language",
+                                "value": "${\"Language\"}"
+                            }
+                        ],
+                        "assertions": [
+                            {
+                                "comparison": "Equals",
+                                "subject": "ResponseStatus",
+                                "path": "code",
+                                "value": "200"
+                            },
+                            {
+                                "comparison": "Contains",
+                                "subject": "ResponseBody",
+                                "path": "content",
+                                "value": "${\"keepAliveTime\"},${\"Language\"}"
+                            }
+                        ],
+                        "parentId": "2c04796c-b9b7-4dd1-84a0-d2ea67394e2b"
+                    }
+                },
+                {
+                    "entity": {
+                        "uriEditor": true,
+                        "type": "Request",
+                        "method": {
+                            "requestBody": true,
+                            "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                            "name": "POST"
+                        },
+                        "body": {
+                            "formBody": {
+                                "overrideContentType": true,
+                                "encoding": "application/x-www-form-urlencoded",
+                                "items": []
+                            },
+                            "bodyType": "Text",
+                            "autoSetLength": true,
+                            "textBody": "{\"environment expressions\": \n{\"keepAliveTime\"},{\"Language\"}}"
+                        },
+                        "headersType": "Form",
+                        "uri": {
+                            "query": {
+                                "delimiter": "&",
+                                "items": [
+                                    {
+                                        "enabled": true,
+                                        "name": "{item1}",
+                                        "value": "{item1}"
+                                    },
+                                    {
+                                        "enabled": true,
+                                        "name": "{item2}",
+                                        "value": "{item2}"
+                                    }
+                                ]
+                            },
+                            "scheme": {
+                                "secure": true,
+                                "name": "https",
+                                "version": "V11"
+                            },
+                            "host": "{host}{path}",
+                            "path": ""
+                        },
+                        "description": "Will fail after release",
+                        "id": "0ddabb98-389d-42be-a989-4113185acced",
+                        "name": "Legacy expressions without dollar signs",
+                        "tag": "0587fae7-a3b3-4754-9fd3-09a446dc6d74",
+                        "headers": [
+                            {
+                                "enabled": true,
+                                "name": "User-Agent",
+                                "value": "{\"UA\"}"
+                            },
+                            {
+                                "enabled": true,
+                                "name": "Keep-Alive",
+                                "value": "{\"keepAliveTime\"}"
+                            },
+                            {
+                                "enabled": true,
+                                "name": "Accept-Language",
+                                "value": "{\"Language\"}"
+                            }
+                        ],
+                        "assertions": [
+                            {
+                                "comparison": "Equals",
+                                "subject": "ResponseStatus",
+                                "path": "code",
+                                "value": "200"
+                            },
+                            {
+                                "comparison": "Contains",
+                                "subject": "ResponseBody",
+                                "path": "content",
+                                "value": "{\"keepAliveTime\"},{\"Language\"}"
+                            }
+                        ],
+                        "parentId": "2c04796c-b9b7-4dd1-84a0-d2ea67394e2b"
+                    }
+                },
+                {
+                    "entity": {
+                        "type": "Request",
+                        "method": {
+                            "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                            "name": "GET"
+                        },
+                        "body": {
+                            "formBody": {
+                                "overrideContentType": true,
+                                "encoding": "application/x-www-form-urlencoded",
+                                "items": []
+                            },
+                            "bodyType": "Text",
+                            "autoSetLength": true
+                        },
+                        "headersType": "Form",
+                        "uri": {
+                            "query": {
+                                "delimiter": "&",
+                                "items": []
+                            },
+                            "scheme": {
+                                "secure": true,
+                                "name": "https",
+                                "version": "V11"
+                            },
+                            "host": "client.restlet.com",
+                            "path": "/api/echo"
+                        },
+                        "description": "",
+                        "id": "01548304-d866-494b-9669-118f14c445df",
+                        "name": "URI",
+                        "tag": "a8f6c181-f670-49e1-a553-edbf28bf8130",
+                        "headers": [],
+                        "parentId": "2c04796c-b9b7-4dd1-84a0-d2ea67394e2b"
+                    }
+                },
+                {
+                    "entity": {
+                        "type": "Request",
+                        "method": {
+                            "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                            "name": "GET"
+                        },
+                        "body": {
+                            "formBody": {
+                                "overrideContentType": true,
+                                "encoding": "application/x-www-form-urlencoded",
+                                "items": []
+                            },
+                            "bodyType": "Text",
+                            "autoSetLength": true
+                        },
+                        "headersType": "Form",
+                        "uri": {
+                            "query": {
+                                "delimiter": "&",
+                                "items": []
+                            },
+                            "scheme": {
+                                "secure": true,
+                                "name": "https",
+                                "version": "V11"
+                            },
+                            "host": "${getEntityById(\"01548304-d866-494b-9669-118f14c445df\").\"request\".\"BROKEN_uri\"}",
+                            "path": ""
+                        },
+                        "description": "Ensure that an expression referencing to a non-existing entity is displayed as Broken reference in the UI",
+                        "id": "6b115aac-06a0-4516-aa3b-245f4c41e5e4",
+                        "name": "URI ref. is broken",
+                        "tag": "ae15df8e-0f47-4e66-98a3-a92dd4eaf341",
+                        "headers": [
+                            {
+                                "enabled": true,
+                                "name": "",
+                                "value": ""
+                            }
+                        ],
+                        "parentId": "2c04796c-b9b7-4dd1-84a0-d2ea67394e2b"
+                    }
+                }
+            ]
+        }
+    ],
+    "environments": [
+        {
+            "type": "Context",
+            "id": "3ae91a2d-2958-4d88-86b2-08a4019e103d",
+            "name": "expressions",
+            "variables": [
+                {
+                    "enabled": true,
+                    "name": "host",
+                    "value": "client.restlet.com"
+                },
+                {
+                    "enabled": true,
+                    "name": "scheme",
+                    "value": "https"
+                },
+                {
+                    "enabled": true,
+                    "name": "path",
+                    "value": "/api/echo"
+                },
+                {
+                    "enabled": true,
+                    "name": "delimiter",
+                    "value": "&"
+                },
+                {
+                    "enabled": true,
+                    "name": "bodyType",
+                    "value": "Text"
+                },
+                {
+                    "enabled": true,
+                    "name": "item1",
+                    "value": "toto"
+                },
+                {
+                    "enabled": true,
+                    "name": "item2",
+                    "value": "tata"
+                },
+                {
+                    "enabled": true,
+                    "name": "UA",
+                    "value": "Netscape"
+                },
+                {
+                    "enabled": true,
+                    "name": "keepAliveTime",
+                    "value": "10"
+                },
+                {
+                    "enabled": true,
+                    "name": "Language",
+                    "value": "jp"
+                }
+            ]
+        }
+    ],
+    "front-version": "2.104.1"
+}
