@@ -79,6 +79,9 @@
         "security" : [ {
           "petstore_auth" : [ "write:pets", "read:pets" ]
         } ]
+      },
+      "x-talend" : {
+        "section" : "Pet"
       }
     },
     "/pet/findByStatus" : {
@@ -131,6 +134,9 @@
         "security" : [ {
           "petstore_auth" : [ "write:pets", "read:pets" ]
         } ]
+      },
+      "x-talend" : {
+        "section" : "Pet"
       }
     },
     "/pet/findByTags" : {
@@ -181,6 +187,9 @@
         "security" : [ {
           "petstore_auth" : [ "write:pets", "read:pets" ]
         } ]
+      },
+      "x-talend" : {
+        "section" : "Pet"
       }
     },
     "/pet/{petId}" : {
@@ -282,7 +291,10 @@
           "type" : "integer",
           "description" : "ID of pet to return"
         }
-      } ]
+      } ],
+      "x-talend" : {
+        "section" : "Pet"
+      }
     },
     "/pet/{petId}/uploadImage" : {
       "post" : {
@@ -336,7 +348,10 @@
           "format" : "int64",
           "description" : "ID of pet to return"
         }
-      } ]
+      } ],
+      "x-talend" : {
+        "section" : "Pet"
+      }
     },
     "/store/inventory" : {
       "get" : {
@@ -359,6 +374,9 @@
         "security" : [ {
           "api_key" : [ ]
         } ]
+      },
+      "x-talend" : {
+        "section" : "Store"
       }
     },
     "/store/order" : {
@@ -396,6 +414,9 @@
             "description" : "Invalid Order"
           }
         }
+      },
+      "x-talend" : {
+        "section" : "Store"
       }
     },
     "/store/order/{orderId}" : {
@@ -452,7 +473,10 @@
           "minimum" : 1,
           "maximum" : 10
         }
-      } ]
+      } ],
+      "x-talend" : {
+        "section" : "Store"
+      }
     },
     "/user" : {
       "post" : {
@@ -474,6 +498,9 @@
             "description" : "Status 200"
           }
         }
+      },
+      "x-talend" : {
+        "section" : "User"
       }
     },
     "/user/createWithArray" : {
@@ -499,6 +526,9 @@
             "description" : "Status 200"
           }
         }
+      },
+      "x-talend" : {
+        "section" : "User"
       }
     },
     "/user/createWithList" : {
@@ -524,6 +554,9 @@
             "description" : "Status 200"
           }
         }
+      },
+      "x-talend" : {
+        "section" : "User"
       }
     },
     "/user/login" : {
@@ -589,6 +622,9 @@
             "description" : "Invalid username/password supplied"
           }
         }
+      },
+      "x-talend" : {
+        "section" : "User"
       }
     },
     "/user/logout" : {
@@ -601,6 +637,9 @@
             "description" : "Status 200"
           }
         }
+      },
+      "x-talend" : {
+        "section" : "User"
       }
     },
     "/user/{username}" : {
@@ -679,7 +718,10 @@
           "type" : "string",
           "description" : "The name that needs to be fetched. Use user1 for testing."
         }
-      } ]
+      } ],
+      "x-talend" : {
+        "section" : "User"
+      }
     }
   },
   "components" : {
@@ -712,6 +754,9 @@
             "type" : "boolean",
             "default" : false
           }
+        },
+        "x-talend" : {
+          "section" : "Store"
         }
       },
       "Category" : {
@@ -724,6 +769,9 @@
           "name" : {
             "type" : "string"
           }
+        },
+        "x-talend" : {
+          "section" : "Pet"
         }
       },
       "User" : {
@@ -756,6 +804,9 @@
             "format" : "int32",
             "description" : "User Status"
           }
+        },
+        "x-talend" : {
+          "section" : "User"
         }
       },
       "Tag" : {
@@ -768,6 +819,9 @@
           "name" : {
             "type" : "string"
           }
+        },
+        "x-talend" : {
+          "section" : "Pet"
         }
       },
       "Pet" : {
@@ -802,6 +856,9 @@
             "description" : "pet status in the store",
             "enum" : [ "available", "pending", "sold" ]
           }
+        },
+        "x-talend" : {
+          "section" : "Pet"
         }
       },
       "ApiResponse" : {
@@ -817,6 +874,9 @@
           "message" : {
             "type" : "string"
           }
+        },
+        "x-talend" : {
+          "section" : "Pet"
         }
       }
     },
@@ -838,6 +898,13 @@
         "in" : "header",
         "name" : "api_key"
       }
+    }
+  },
+  "x-talend" : {
+    "sections" : {
+      "Pet" : { },
+      "Store" : { },
+      "User" : { }
     }
   }
 }
