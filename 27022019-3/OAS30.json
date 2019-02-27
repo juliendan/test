@@ -163,9 +163,6 @@
         "security" : [ {
           "HTTP_BASIC" : [ ]
         } ]
-      },
-      "x-talend" : {
-        "section" : "toto"
       }
     },
     "/contacts/{contactid}" : {
@@ -529,10 +526,7 @@
             "example" : "Kurt"
           }
         },
-        "example" : "{\n  \"id\": \"0e8dd830-ad98-11e6-bf2e-47644ada7c0f\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Smith\",\n  \"birthday\": 152755200000,\n  \"active\": true,\n  \"rank\": 1,\n  \"company\": \"0e8cedd0-ad98-11e6-bf2e-47644ada7c0f\"\n}",
-        "x-talend" : {
-          "section" : "toto"
-        }
+        "example" : "{\n  \"id\": \"0e8dd830-ad98-11e6-bf2e-47644ada7c0f\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Smith\",\n  \"birthday\": 152755200000,\n  \"active\": true,\n  \"rank\": 1,\n  \"company\": \"0e8cedd0-ad98-11e6-bf2e-47644ada7c0f\"\n}"
       },
       "Company" : {
         "type" : "object",
@@ -571,10 +565,7 @@
             }
           }
         },
-        "example" : "{\n  \"id\": \"0e8cedd0-ad98-11e6-bf2e-47644ada7c0f\",\n  \"name\": \"George Street Brewery\",\n  \"address\":{\n    \"street\": \"2 place de la Defense\",\n    \"zipcode\": \"92053\",\n    \"city\": \"Paris\"\n  },\n  \"tags\":[\n    \"brewery\",\n    \"beer\",\n    \"ale\"\n  ]\n}",
-        "x-talend" : {
-          "section" : "toto"
-        }
+        "example" : "{\n  \"id\": \"0e8cedd0-ad98-11e6-bf2e-47644ada7c0f\",\n  \"name\": \"George Street Brewery\",\n  \"address\":{\n    \"street\": \"2 place de la Defense\",\n    \"zipcode\": \"92053\",\n    \"city\": \"Paris\"\n  },\n  \"tags\":[\n    \"brewery\",\n    \"beer\",\n    \"ale\"\n  ]\n}"
       }
     },
     "securitySchemes" : {
@@ -583,11 +574,6 @@
         "scheme" : "basic",
         "description" : "All GET methods are public, meaning that *you can read all the data*. Write operations require authentication and therefore are forbidden to the general public."
       }
-    }
-  },
-  "x-talend" : {
-    "sections" : {
-      "toto" : { }
     }
   }
 }
