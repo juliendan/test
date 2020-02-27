@@ -1,132 +1,17 @@
 {
   "openapi" : "3.0.1",
   "info" : {
-    "title" : "Tasks API",
+    "title" : "STUDIO Tasks API",
     "description" : "An API for managing a list of tasks that need to be done",
     "contact" : { },
     "version" : "1.1.0"
   },
+  "servers" : [ {
+    "url" : "https://6tvlu1k.api-mock.int.cloud.talend.com",
+    "description" : "Endpoint du mock de votre API. Lorsqu'il est appelé, il simule le comportement de votre API."
+  } ],
   "paths" : {
     "/tasks/" : {
-      "get" : {
-        "summary" : "Load the list of Tasks",
-        "parameters" : [ {
-          "name" : "$size",
-          "in" : "query",
-          "description" : "Size of the page to retrieve.",
-          "schema" : {
-            "type" : "integer",
-            "description" : "Size of the page to retrieve."
-          },
-          "example" : 10
-        }, {
-          "name" : "$page",
-          "in" : "query",
-          "description" : "Number of the page to retrieve.",
-          "schema" : {
-            "type" : "integer",
-            "description" : "Number of the page to retrieve."
-          },
-          "example" : 1
-        }, {
-          "name" : "$sort",
-          "in" : "query",
-          "description" : "Order in which to retrieve the results. Multiple sort criteria can be passed.",
-          "schema" : {
-            "type" : "string",
-            "description" : "Order in which to retrieve the results. Multiple sort criteria can be passed."
-          },
-          "example" : "createdAt DESC"
-        }, {
-          "name" : "id",
-          "in" : "query",
-          "description" : "Allows to filter the collection of results by the value of field `id`",
-          "schema" : {
-            "type" : "string",
-            "description" : "Allows to filter the collection of results by the value of field `id`"
-          },
-          "example" : "47ee3550-b619-11e6-8408-0bdb025a7cfa"
-        }, {
-          "name" : "name",
-          "in" : "query",
-          "description" : "Allows to filter the collection of results by the value of field `name`",
-          "schema" : {
-            "type" : "string",
-            "description" : "Allows to filter the collection of results by the value of field `name`"
-          },
-          "example" : "Learn about hypermedia APIs"
-        }, {
-          "name" : "createdAt",
-          "in" : "query",
-          "description" : "Allows to filter the collection of results by the value of field `createdAt`",
-          "schema" : {
-            "type" : "string",
-            "description" : "Allows to filter the collection of results by the value of field `createdAt`"
-          },
-          "example" : "2016.07.03"
-        }, {
-          "name" : "completed",
-          "in" : "query",
-          "description" : "Allows to filter the collection of results by the value of field `completed`",
-          "schema" : {
-            "type" : "boolean",
-            "description" : "Allows to filter the collection of results by the value of field `completed`"
-          },
-          "example" : true
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "Status 200",
-            "headers" : {
-              "X-Page-Count" : {
-                "schema" : {
-                  "type" : "integer"
-                },
-                "example" : 1
-              },
-              "X-Page-Number" : {
-                "schema" : {
-                  "type" : "integer"
-                },
-                "example" : 1
-              },
-              "X-Page-Size" : {
-                "schema" : {
-                  "type" : "integer"
-                },
-                "example" : 25
-              },
-              "X-Total-Count" : {
-                "schema" : {
-                  "type" : "integer"
-                },
-                "example" : 2
-              }
-            },
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "array",
-                  "items" : {
-                    "$ref" : "#/components/schemas/Task"
-                  }
-                },
-                "example" : "[{\n  \"id\": \"47ee3550-b619-11e6-8408-0bdb025a7cfa\",\n  \"name\": \"Feed the fish\",\n  \"completed\": false,\n  \"createdAt\": \"2016.07.03\"\n}]"
-              }
-            }
-          },
-          "400" : {
-            "description" : "Status 400",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        }
-      },
       "post" : {
         "summary" : "Create a new Task",
         "requestBody" : {
@@ -235,6 +120,24 @@
         },
         "example" : "47ee3550-b619-11e6-8408-0bdb025a7cfa"
       } ]
+    },
+    "/erg" : {
+      "get" : {
+        "summary" : "azdazdazdzdz",
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "string"
+                },
+                "example" : "ok"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components" : {
@@ -283,6 +186,32 @@
           }
         },
         "example" : "{\n  \"code\": 400,\n  \"description\": \"Bad query parameter [$size]: Invalid integer value [abc]\",\n  \"reasonPhrase\": \"Bad Request\"\n}"
+      }
+    },
+    "parameters" : {
+      "d" : {
+        "name" : "d",
+        "in" : "query",
+        "required" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "d_1" : {
+        "name" : "d",
+        "in" : "header",
+        "required" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "d_2" : {
+        "name" : "d",
+        "in" : "path",
+        "required" : true,
+        "schema" : {
+          "type" : "string"
+        }
       }
     },
     "securitySchemes" : {
